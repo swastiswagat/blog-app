@@ -1,0 +1,32 @@
+<section class="featured-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-center mt-5">
+        <h2 class="text-white">Featured Posts</h2>
+        <p class="text-white">
+          Discover our handpicked selection of the most valuable course reviews and study guides
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-4 mt-3"
+        *ngFor="let featuredPost of featuredPostsArray"
+      >
+        <app-post-card [postData]="featuredPost"></app-post-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="col-md-12 text-center">
+    <h2>Latest Posts</h2>
+    <p>Fresh insights and reviews from students across various courses</p>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mt-3" *ngFor="let latestPost of latestPostsArray">
+      <app-post-card [postData]="latestPost"></app-post-card>
+    </div>
+  </div>
+</section>

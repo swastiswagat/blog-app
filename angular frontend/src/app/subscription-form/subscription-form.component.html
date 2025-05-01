@@ -1,0 +1,58 @@
+<div class="card shadow-effect subscription-card">
+  <div class="card-body p-4">
+    <div class="text-center">
+      <h3 class="card-title mb-4">UNLOCK EXCLUSIVE CONTENT</h3>
+      
+      <div class="subscription-content">
+        <p class="subs-text mb-4">
+          Get instant access to premium articles, insider tips, and members-only resources. 
+          Join our community of [1,000+] readers who receive:
+        </p>
+        
+        <ul class="benefits-list mb-4">
+          <li><i class="fas fa-check-circle text-success mr-2"></i> Weekly in-depth guides</li>
+          <li><i class="fas fa-check-circle text-success mr-2"></i> Early access to new posts</li>
+          <li><i class="fas fa-check-circle text-success mr-2"></i> Exclusive downloadable content</li>
+          <li><i class="fas fa-check-circle text-success mr-2"></i> Curated industry insights</li>
+        </ul>
+        
+        <p class="subs-text mb-4">
+          Don't miss out – your next favorite read could be waiting in your inbox!
+        </p>
+      </div>
+
+      <div class="alert alert-danger mt-3" *ngIf="isEmailError">
+        Email is already in use
+      </div>
+
+      <div class="alert alert-success mt-3" *ngIf="isSubscribed">
+        Thank you for subscribing to our newsletter service. Stay tuned for awesome blog posts!
+      </div>
+      
+      <form class="subscription-form row g-3 mt-4" #subForm="ngForm" (ngSubmit)="onSubmit(subForm.value)" *ngIf="!isSubscribed">
+        <div class="col-md-5 form-group">
+          <input type="text" class="form-control shadow-effect" placeholder="Your Name" name="name" #Name="ngModel"
+            ngModel required [ngClass]="{ 'is-invalid': Name.touched && Name.invalid }" />
+          <div class="invalid-feedback" *ngIf="Name.touched && Name.invalid">
+            <div *ngIf="Name.errors['required']">Name is required</div>
+          </div>
+        </div>
+        
+        <div class="col-md-5 form-group">
+          <input type="email" class="form-control shadow-effect" placeholder="Email Address" name="email"
+            #Email="ngModel" ngModel required email [ngClass]="{ 'is-invalid': Email.touched && Email.invalid }" />
+          <div class="invalid-feedback" *ngIf="Email.touched && Email.invalid">
+            <div *ngIf="Email.errors['required']">Email is required</div>
+            <div *ngIf="Email.errors['email']">Please enter a valid email address</div>
+          </div>
+        </div>
+        
+        <div class="col-md-2">
+          <button class="btn btn-primary btn-block btn-subscribe" [disabled]="subForm.invalid">
+            SUBSCRIBE
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

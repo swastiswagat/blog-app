@@ -1,0 +1,17 @@
+<div class="bg-theme p-5">
+  <div class="container">
+    <h1 class="text-white">{{ categoryObj.category }}</h1>
+    <p class="text-white">
+      Browse student reviews, study guides, and course insights for {{ categoryObj.category }}. 
+      Get honest opinions from peers who've taken these classes before you.
+    </p>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let post of postsArray">
+      <app-post-card [postData]="post"></app-post-card>
+    </div>
+  </div>
+</div>

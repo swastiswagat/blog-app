@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* regular style toast  */
+@import "~ngx-toastr/toastr";
+
+:root {
+  --primary-color: #026567;
+  --secondary-color: #e5f5ea;
+  --body-text-color: #596392;
+  --navbar-footer-color: #f9f9f9;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: var(--body-text-color);
+}
+
+.site-logo {
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.nav-link {
+  color: var(--primary-color);
+}
+
+.shadow-effect {
+  border: none;
+  box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
+}
+
+.bg-theme {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary-theme {
+  background-color: var(--secondary-color);
+}
+
+.text-theme-primary {
+  color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  height: 60px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.btn-theme {
+  height: 58px;
+  border: none;
+  /* font-size: 13px; */
+  background-color: var(--primary-color);
+}

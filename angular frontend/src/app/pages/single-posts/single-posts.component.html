@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card shadow-effect">
+        <img src="{{ postData?.postImgPath }} " alt="" />
+        <div class="card-body">
+          <small class="bg-light text-danger text-center"
+            >{{ postData?.category.category }}
+          </small>
+          <small
+            class="bg-light text-success text-center ml-2"
+            *ngIf="postData?.isFeatured"
+            >Featured</small
+          >
+          <small class="bg-light text-info text-center ml-2"
+            >Views- {{ postData?.views }}</small
+          >
+          <small class="bg-light text-warning text-center ml-2"
+            >LAST UPDATED -{{ postData?.createdAt.toMillis() | date }}</small
+          >
+
+          <h1 class="mt-3 mb-3">
+            {{ postData?.title }}
+          </h1>
+          <!-- <p [innerHtml]="postData.content"></p> -->
+          <p>
+            {{ postData?.content }}
+          </p>
+        </div>
+      </div>
+      <app-comment-form></app-comment-form>
+      <app-comment-list></app-comment-list>
+    </div>
+
+    <div class="col-md-3">
+      <div *ngFor="let similarPost of similarPostArray">
+        <app-post-card [postData]="similarPost"></app-post-card>
+      </div>
+    </div>
+  </div>
+</div>
