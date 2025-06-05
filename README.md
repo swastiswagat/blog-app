@@ -54,3 +54,6 @@ Efficient handling and validation of user input from newsletter or contact subsc
 
 ### 🚀 Build & Deploy
 Optimize the app for performance and deploy to any reliable hosting platform.
+
+
+.nsjsiis
